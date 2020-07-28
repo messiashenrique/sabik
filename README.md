@@ -2,7 +2,7 @@
 Simples PDV para emissão de NFCe (Brasil)
 
 ## Tela de Login
-<img src="snapshots/login.png">
+<img width="500" src="snapshots/login.png">
 
 ## Tela Principal - Organização por abas
 <img src="snapshots/tela.png">
