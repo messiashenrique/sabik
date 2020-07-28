@@ -1,0 +1,337 @@
+object frmPagamento: TfrmPagamento
+  Left = 539
+  Height = 134
+  Top = 233
+  Width = 373
+  ActiveControl = btnOk
+  BorderStyle = bsNone
+  Caption = 'frmPagamento'
+  ClientHeight = 134
+  ClientWidth = 373
+  Color = 4737096
+  KeyPreview = True
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Visible = False
+  object lbTitulo: TLabel
+    Left = 0
+    Height = 32
+    Top = 0
+    Width = 373
+    Align = alTop
+    Alignment = taCenter
+    Anchors = []
+    AutoSize = False
+    Caption = 'Pagamento'
+    Color = 4737096
+    Font.Color = clWhite
+    Font.Height = -15
+    Font.Style = [fsBold]
+    Layout = tlCenter
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object lbRodape: TLabel
+    AnchorSideTop.Control = pnAprazo
+    AnchorSideTop.Side = asrBottom
+    Left = 0
+    Height = 41
+    Top = 94
+    Width = 373
+    Align = alCustom
+    Alignment = taCenter
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = False
+    Color = 4737096
+    Font.Height = -15
+    Font.Style = [fsBold]
+    Layout = tlCenter
+    ParentColor = False
+    ParentFont = False
+    Transparent = False
+  end
+  object btnOk: TBitBtn
+    AnchorSideLeft.Control = lbRodape
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = lbRodape
+    Left = 130
+    Height = 30
+    Top = 98
+    Width = 112
+    BorderSpacing.Top = 4
+    Caption = '&Faturar'
+    Default = True
+    Kind = bkOK
+    OnClick = btnOkClick
+    TabOrder = 0
+  end
+  object pnInfo: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 4
+    Height = 63
+    Top = 32
+    Width = 365
+    Align = alCustom
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 4
+    BorderSpacing.Right = 4
+    BevelOuter = bvNone
+    ClientHeight = 63
+    ClientWidth = 365
+    Color = clSilver
+    Font.Height = -15
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 5
+      Height = 17
+      Top = 0
+      Width = 127
+      Caption = 'Forma de pagamento'
+      Font.Height = -13
+      ParentColor = False
+      ParentFont = False
+    end
+    object cbFormaPgto: TComboBox
+      Left = 5
+      Height = 25
+      Top = 20
+      Width = 189
+      Font.Height = -13
+      ItemHeight = 17
+      ItemIndex = 0
+      Items.Strings = (
+        'A VISTA'
+        'A PRAZO'
+        'CARTAO CREDITO (A VISTA)'
+        'CARTAO CREDITO PARCELADO'
+        'CARTAO DE DEBITO'
+        'CREDIPAR'
+        'CHEQUE'
+      )
+      OnChange = cbFormaPgtoChange
+      ParentFont = False
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'A VISTA'
+    end
+    object Label2: TLabel
+      AnchorSideTop.Control = lbCifrao
+      AnchorSideRight.Control = lbCifrao
+      Left = 226
+      Height = 17
+      Top = 38
+      Width = 32
+      Anchors = [akTop, akRight]
+      BorderSpacing.Top = 5
+      BorderSpacing.Right = 4
+      Caption = 'Total:'
+      Font.Height = -13
+      ParentColor = False
+      ParentFont = False
+    end
+    object fTotal: TLabel
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = pnInfo
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = pnInfo
+      AnchorSideBottom.Side = asrBottom
+      Left = 294
+      Height = 30
+      Top = 33
+      Width = 66
+      Alignment = taRightJustify
+      Anchors = [akRight, akBottom]
+      BorderSpacing.Right = 5
+      Caption = '234,56'
+      Font.Color = clBlack
+      Font.Height = -21
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lbCifrao: TLabel
+      AnchorSideTop.Control = fTotal
+      AnchorSideRight.Control = fTotal
+      Left = 262
+      Height = 30
+      Top = 33
+      Width = 32
+      Alignment = taRightJustify
+      Anchors = [akTop, akRight]
+      Caption = 'R$ '
+      Font.Color = clBlack
+      Font.Height = -21
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lbSubTotal: TLabel
+      AnchorSideRight.Control = lbDesconto
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = lbDesconto
+      AnchorSideBottom.Side = asrBottom
+      Left = 207
+      Height = 17
+      Top = 0
+      Width = 51
+      Anchors = [akRight, akBottom]
+      BorderSpacing.Bottom = 19
+      Caption = 'Subtotal:'
+      Font.Height = -13
+      ParentColor = False
+      ParentFont = False
+    end
+    object lbDesconto: TLabel
+      AnchorSideRight.Control = Label2
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = Label2
+      AnchorSideBottom.Side = asrBottom
+      Left = 200
+      Height = 17
+      Top = 19
+      Width = 58
+      Anchors = [akRight, akBottom]
+      BorderSpacing.Bottom = 19
+      Caption = 'Desconto:'
+      Font.Height = -13
+      ParentColor = False
+      ParentFont = False
+    end
+    object fSubtotal: TLabel
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = fDesconto
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = fDesconto
+      AnchorSideBottom.Side = asrBottom
+      Left = 329
+      Height = 21
+      Top = -2
+      Width = 31
+      Alignment = taRightJustify
+      Anchors = [akRight, akBottom]
+      BorderSpacing.Bottom = 19
+      Caption = '0,00'
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object fDesconto: TLabel
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Side = asrBottom
+      AnchorSideBottom.Control = fTotal
+      AnchorSideBottom.Side = asrBottom
+      Left = 329
+      Height = 21
+      Top = 17
+      Width = 31
+      Alignment = taRightJustify
+      Anchors = [akBottom]
+      BorderSpacing.Right = 5
+      BorderSpacing.Bottom = 25
+      Caption = '0,00'
+      Font.Color = 32509
+      Font.Height = -16
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+  end
+  object pnAprazo: TPanel
+    AnchorSideLeft.Control = Owner
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 4
+    Height = 0
+    Top = 94
+    Width = 365
+    Anchors = [akTop, akLeft, akRight]
+    BorderSpacing.Left = 4
+    BorderSpacing.Right = 4
+    BevelOuter = bvNone
+    ClientHeight = 0
+    ClientWidth = 365
+    Color = clBtnFace
+    ParentColor = False
+    TabOrder = 2
+    object lbParcelas: TLabel
+      AnchorSideLeft.Control = pnAprazo
+      AnchorSideTop.Control = seQtdeParcelas
+      AnchorSideTop.Side = asrBottom
+      AnchorSideRight.Control = pnAprazo
+      AnchorSideRight.Side = asrBottom
+      Left = 0
+      Height = 0
+      Top = 1
+      Width = 365
+      Align = alBottom
+      Alignment = taCenter
+      Anchors = [akTop, akLeft, akRight]
+      AutoSize = False
+      BorderSpacing.Top = 2
+      Font.Height = -15
+      Font.Name = 'Consolas'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+    end
+    object lbPrimeiroVencimento: TLabel
+      Left = 8
+      Height = 17
+      Top = 3
+      Width = 119
+      Caption = 'Primeiro vencimento'
+      Font.Height = -13
+      ParentColor = False
+      ParentFont = False
+    end
+    object dePrimeiroVencimento: TDateEdit
+      Left = 8
+      Height = 25
+      Top = 19
+      Width = 124
+      CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+      DateOrder = doNone
+      ButtonWidth = 23
+      NumGlyphs = 1
+      Font.Height = -13
+      MaxLength = 0
+      OnChange = seQtdeParcelasChange
+      ParentFont = False
+      TabOrder = 0
+    end
+    object lbNumDeParcelas: TLabel
+      Left = 232
+      Height = 17
+      Top = 3
+      Width = 120
+      Alignment = taRightJustify
+      Caption = 'Número de parcelas'
+      Font.Height = -13
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+    end
+    object seQtdeParcelas: TSpinEdit
+      Left = 280
+      Height = 25
+      Top = 19
+      Width = 72
+      Font.Height = -13
+      MaxValue = 12
+      MinValue = 1
+      OnChange = seQtdeParcelasChange
+      ParentFont = False
+      TabOrder = 1
+      Value = 1
+    end
+  end
+end

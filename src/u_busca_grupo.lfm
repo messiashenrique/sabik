@@ -1,0 +1,173 @@
+object frmBuscaGrupo: TfrmBuscaGrupo
+  Left = 411
+  Height = 320
+  Top = 120
+  Width = 440
+  ActiveControl = grid
+  BorderStyle = bsNone
+  ClientHeight = 320
+  ClientWidth = 440
+  Color = 5263440
+  KeyPreview = True
+  OnClose = FormClose
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  Position = poDesktopCenter
+  Visible = False
+  object grid: TPinGrid
+    Left = 20
+    Height = 182
+    Top = 87
+    Width = 400
+    Align = alCustom
+    AlternateColor = 16776441
+    AutoFillColumns = True
+    BorderStyle = bsNone
+    Color = clBtnFace
+    ColCount = 3
+    Columns = <    
+      item
+        Alignment = taCenter
+        SizePriority = 0
+        Title.Alignment = taCenter
+        Title.Caption = 'Código'
+        Width = 50
+      end    
+      item
+        Title.Alignment = taCenter
+        Title.Caption = 'Nome'
+        Width = 240
+      end    
+      item
+        Alignment = taCenter
+        SizePriority = 0
+        Title.Alignment = taCenter
+        Title.Caption = 'NCM'
+        Width = 110
+      end>
+    DefaultRowHeight = 20
+    FixedColor = 5263440
+    FixedCols = 0
+    Flat = True
+    Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goRowSelect, goSmoothScroll]
+    RowCount = 1
+    TabOrder = 0
+    TitleFont.Color = clCream
+    OnDblClick = gridDblClick
+    OnKeyDown = gridKeyDown
+    MarkColor = clBlack
+    ColWidths = (
+      50
+      240
+      110
+    )
+  end
+  object pbSearch: TPanel
+    Left = 0
+    Height = 79
+    Top = 0
+    Width = 440
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 79
+    ClientWidth = 440
+    Color = 5263440
+    ParentColor = False
+    TabOrder = 1
+    object Image1: TImage
+      Left = 20
+      Height = 24
+      Top = 52
+      Width = 28
+      Picture.Data = {
+        1754506F727461626C654E6574776F726B477261706869639C01000089504E47
+        0D0A1A0A0000000D4948445200000018000000180806000000E0773DF8000000
+        06624B474400FF00FF00FFA0BDA79300000151494441544889ED944F2B845114
+        C69F6B187F164A318552B2A2666769164A94B2E31B48B250967C0965672BECAC
+        2C50F80016164629CAC246134D4D4649999F85BB38BDBDF3FE999952F2ACCEDB
+        7DCEF33B9DDB7BA57FFDB65C9C01C84B9A91342CA92AA928E9D439F7DE141998
+        002E095719D8006207AC175E002A81D08F10D021D096363C07BCF8801AB0038C
+        FAB32E6011783490CDB4806DD3BC5AC733003C78CF1BD09F343C03947CE3458C
+        77D60CB25CCF17DCDF88A49CAF8F62E6399754F1F5645240AFA95FA3D29D7335
+        4965FFD997145032F5581400E8913418D2172DE0CEEFF51EC846F8D6CC1D2CA5
+        01AC9BC603A023C45300AADEF30474A60164812B03B9015680296001D8053ECD
+        F90990490CF09021E09AE4DA6F04D20D6C01CF81B02FE00C98036E9B8278501B
+        9007E68169CC5FCBCFB35234903D1A7D0023060842C65B0A309063BFA6F69603
+        FEB6BE01F661EFBD00379BD70000000049454E44AE426082
+      }
+    end
+    object edSearch: TEdit
+      Left = 53
+      Height = 28
+      Top = 49
+      Width = 355
+      CharCase = ecUppercase
+      Color = clBtnFace
+      Font.Height = -15
+      OnChange = edSearchChange
+      OnKeyDown = edSearchKeyDown
+      ParentFont = False
+      TabOrder = 0
+      TextHint = '(F3) Para procurar produtos'
+    end
+    object lbTitulo: TLabel
+      Left = 0
+      Height = 32
+      Top = 0
+      Width = 440
+      Align = alTop
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Busca de Grupos'
+      Color = 13289984
+      Font.Height = -15
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+  end
+  object lbRodape: TLabel
+    AnchorSideLeft.Control = grid
+    AnchorSideTop.Control = grid
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = grid
+    AnchorSideRight.Side = asrBottom
+    Left = 20
+    Height = 16
+    Top = 269
+    Width = 400
+    Align = alCustom
+    Alignment = taRightJustify
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = False
+    Font.Color = clCream
+    Layout = tlBottom
+    ParentColor = False
+    ParentFont = False
+  end
+  object pnControl: TPanel
+    Left = 0
+    Height = 35
+    Top = 285
+    Width = 440
+    Align = alBottom
+    BevelOuter = bvNone
+    ClientHeight = 35
+    ClientWidth = 440
+    Color = 5263440
+    ParentColor = False
+    TabOrder = 2
+    object btnOk: TBitBtn
+      Left = 156
+      Height = 30
+      Top = 1
+      Width = 128
+      DefaultCaption = True
+      Kind = bkOK
+      ModalResult = 11
+      TabOrder = 0
+    end
+  end
+end

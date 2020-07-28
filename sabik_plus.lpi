@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectOptions>
+    <Version Value="10"/>
+    <General>
+      <SessionStorage Value="InProjectDir"/>
+      <MainUnit Value="0"/>
+      <Title Value="Sabik Plus"/>
+      <ResourceType Value="res"/>
+      <UseXPManifest Value="True"/>
+      <XPManifest>
+        <TextName Value="Saturno29.Sabik.SabikPlus"/>
+        <TextDesc Value="Simples aplicativo para emissão de NFCe"/>
+      </XPManifest>
+      <Icon Value="0"/>
+    </General>
+    <i18n>
+      <EnableI18N LFM="False"/>
+    </i18n>
+    <VersionInfo>
+      <UseVersionInfo Value="True"/>
+      <MajorVersionNr Value="1"/>
+      <BuildNr Value="16"/>
+      <Language Value="0416"/>
+      <StringTable ProductName="Sabik Plus"/>
+    </VersionInfo>
+    <BuildModes Count="2">
+      <Item1 Name="Produção" Default="True"/>
+      <Item2 Name="Desenvolvimento">
+        <CompilerOptions>
+          <Version Value="11"/>
+          <Target>
+            <Filename Value="sabik_plus"/>
+          </Target>
+          <SearchPaths>
+            <IncludeFiles Value="$(ProjOutDir)"/>
+            <OtherUnitFiles Value="src"/>
+            <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+          </SearchPaths>
+          <Parsing>
+            <SyntaxOptions>
+              <IncludeAssertionCode Value="True"/>
+            </SyntaxOptions>
+          </Parsing>
+          <CodeGeneration>
+            <Checks>
+              <IOChecks Value="True"/>
+              <RangeChecks Value="True"/>
+              <OverflowChecks Value="True"/>
+              <StackChecks Value="True"/>
+            </Checks>
+            <VerifyObjMethodCallValidity Value="True"/>
+          </CodeGeneration>
+          <Linking>
+            <Debugging>
+              <DebugInfoType Value="dsDwarf2Set"/>
+              <UseHeaptrc Value="True"/>
+              <TrashVariables Value="True"/>
+              <StripSymbols Value="True"/>
+              <UseExternalDbgSyms Value="True"/>
+            </Debugging>
+            <Options>
+              <Win32>
+                <GraphicApplication Value="True"/>
+              </Win32>
+            </Options>
+          </Linking>
+          <Other>
+            <CustomOptions Value="-dDesenvolvimento"/>
+          </Other>
+        </CompilerOptions>
+      </Item2>
+    </BuildModes>
+    <PublishOptions>
+      <Version Value="2"/>
+      <DestinationDirectory Value="C:/projetos/vega/deploy"/>
+    </PublishOptions>
+    <RunParams>
+      <local>
+        <FormatVersion Value="1"/>
+      </local>
+    </RunParams>
+    <RequiredPackages Count="18">
+      <Item1>
+        <PackageName Value="ACBr_NFCe_DanfeRL"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="ACBrSerial"/>
+      </Item2>
+      <Item3>
+        <PackageName Value="ACBr_NFe_DanfeESCPOS"/>
+      </Item3>
+      <Item4>
+        <PackageName Value="ACBr_Sintegra"/>
+      </Item4>
+      <Item5>
+        <PackageName Value="ACBrTCP"/>
+      </Item5>
+      <Item6>
+        <PackageName Value="lr_DialogDesign"/>
+      </Item6>
+      <Item7>
+        <PackageName Value="lazreportpdfexport"/>
+      </Item7>
+      <Item8>
+        <PackageName Value="lazreport"/>
+      </Item8>
+      <Item9>
+        <PackageName Value="SQLDBLaz"/>
+      </Item9>
+      <Item10>
+        <PackageName Value="FCL"/>
+      </Item10>
+      <Item11>
+        <PackageName Value="ACBr_NFe_DanfeRL"/>
+      </Item11>
+      <Item12>
+        <PackageName Value="ACBr_NFe"/>
+      </Item12>
+      <Item13>
+        <PackageName Value="TDI"/>
+      </Item13>
+      <Item14>
+        <PackageName Value="Greyhound"/>
+      </Item14>
+      <Item15>
+        <PackageName Value="LazControls"/>
+      </Item15>
+      <Item16>
+        <PackageName Value="pinguelaComponents"/>
+      </Item16>
+      <Item17>
+        <PackageName Value="dOpfRT"/>
+      </Item17>
+      <Item18>
+        <PackageName Value="LCL"/>
+      </Item18>
+    </RequiredPackages>
+    <Units Count="26">
+      <Unit0>
+        <Filename Value="sabik_plus.lpr"/>
+        <IsPartOfProject Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="src/u_main.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmMain"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit1>
+      <Unit2>
+        <Filename Value="src/u_libs.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit2>
+      <Unit3>
+        <Filename Value="src/u_usuarios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmUsuarios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit3>
+      <Unit4>
+        <Filename Value="src/u_models.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit4>
+      <Unit5>
+        <Filename Value="src/u_fornecedores.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmFornecedores"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit5>
+      <Unit6>
+        <Filename Value="src/u_dm.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="dm"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="DataModule"/>
+      </Unit6>
+      <Unit7>
+        <Filename Value="src/u_clientes.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmClientes"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit7>
+      <Unit8>
+        <Filename Value="src/u_grupos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmGrupos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit8>
+      <Unit9>
+        <Filename Value="src/u_login.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmLogin"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit9>
+      <Unit10>
+        <Filename Value="src/u_produtos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmProdutos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit10>
+      <Unit11>
+        <Filename Value="src/u_rules.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit11>
+      <Unit12>
+        <Filename Value="src/u_busca_grupo.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmBuscaGrupo"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit12>
+      <Unit13>
+        <Filename Value="src/u_entradas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmEntradas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit13>
+      <Unit14>
+        <Filename Value="src/u_busca_produto.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmBuscaProduto"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit14>
+      <Unit15>
+        <Filename Value="src/u_vendas.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmVendas"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit15>
+      <Unit16>
+        <Filename Value="src/u_busca_cliente.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmBuscaCliente"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit16>
+      <Unit17>
+        <Filename Value="src/u_pagamento.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmPagamento"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit17>
+      <Unit18>
+        <Filename Value="src/u_dfs.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmDFs"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit18>
+      <Unit19>
+        <Filename Value="src/u_relatorios.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmRelatorios"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit19>
+      <Unit20>
+        <Filename Value="src/u_gateway.pas"/>
+        <IsPartOfProject Value="True"/>
+      </Unit20>
+      <Unit21>
+        <Filename Value="src/u_config.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmConfig"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit21>
+      <Unit22>
+        <Filename Value="scripts_update.inc"/>
+        <IsPartOfProject Value="True"/>
+      </Unit22>
+      <Unit23>
+        <Filename Value="src/u_caixa.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCaixa"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit23>
+      <Unit24>
+        <Filename Value="src/u_recebimentos.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmRecebimentos"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit24>
+      <Unit25>
+        <Filename Value="src/u_checkout.pas"/>
+        <IsPartOfProject Value="True"/>
+        <ComponentName Value="frmCheckout"/>
+        <HasResources Value="True"/>
+        <ResourceBaseClass Value="Form"/>
+      </Unit25>
+    </Units>
+  </ProjectOptions>
+  <CompilerOptions>
+    <Version Value="11"/>
+    <Target>
+      <Filename Value="sabik_plus"/>
+    </Target>
+    <SearchPaths>
+      <IncludeFiles Value="$(ProjOutDir)"/>
+      <OtherUnitFiles Value="src"/>
+      <UnitOutputDirectory Value="lib/$(TargetCPU)-$(TargetOS)"/>
+    </SearchPaths>
+    <Parsing>
+      <SyntaxOptions>
+        <IncludeAssertionCode Value="True"/>
+      </SyntaxOptions>
+    </Parsing>
+    <CodeGeneration>
+      <Checks>
+        <IOChecks Value="True"/>
+        <RangeChecks Value="True"/>
+        <OverflowChecks Value="True"/>
+        <StackChecks Value="True"/>
+      </Checks>
+    </CodeGeneration>
+    <Linking>
+      <Debugging>
+        <DebugInfoType Value="dsDwarf2Set"/>
+        <StripSymbols Value="True"/>
+        <UseExternalDbgSyms Value="True"/>
+      </Debugging>
+      <Options>
+        <Win32>
+          <GraphicApplication Value="True"/>
+        </Win32>
+      </Options>
+    </Linking>
+  </CompilerOptions>
+  <Debugging>
+    <Exceptions Count="3">
+      <Item1>
+        <Name Value="EAbort"/>
+      </Item1>
+      <Item2>
+        <Name Value="ECodetoolError"/>
+      </Item2>
+      <Item3>
+        <Name Value="EFOpenError"/>
+      </Item3>
+    </Exceptions>
+  </Debugging>
+</CONFIG>

@@ -1,0 +1,175 @@
+object frmCheckout: TfrmCheckout
+  Left = 0
+  Height = 231
+  Top = 0
+  Width = 380
+  ActiveControl = cbFpgto
+  BorderStyle = bsNone
+  Caption = 'frmCheckout'
+  ClientHeight = 231
+  ClientWidth = 380
+  Color = 16773345
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyUp = FormKeyUp
+  OnShow = FormShow
+  Position = poScreenCenter
+  Visible = False
+  object Panel1: TPanel
+    Left = 0
+    Height = 231
+    Top = 0
+    Width = 380
+    Align = alClient
+    BevelColor = 16744448
+    BevelWidth = 2
+    ClientHeight = 231
+    ClientWidth = 380
+    TabOrder = 0
+    object cbFpgto: TComboBox
+      Left = 188
+      Height = 28
+      Top = 64
+      Width = 156
+      Font.Height = -15
+      ItemHeight = 20
+      ItemIndex = 0
+      Items.Strings = (
+        'Dinheiro'
+        'Cartão de crédito'
+        'Cartão de débito'
+        'Credipar'
+        'Carnê'
+      )
+      OnChange = cbFpgtoChange
+      ParentFont = False
+      Style = csDropDownList
+      TabOrder = 0
+      Text = 'Dinheiro'
+    end
+    object Label1: TLabel
+      Left = 56
+      Height = 15
+      Top = 69
+      Width = 117
+      Caption = 'Forma de pagamento:'
+      ParentColor = False
+    end
+    object edValor: TEdit
+      Left = 188
+      Height = 29
+      Top = 99
+      Width = 156
+      Font.Height = -16
+      OnChange = edValorChange
+      ParentFont = False
+      TabOrder = 1
+    end
+    object lbDinheiro: TLabel
+      Left = 76
+      Height = 15
+      Top = 108
+      Width = 97
+      Caption = 'Valor em dinheiro:'
+      ParentColor = False
+    end
+    object btnReceber: TSpeedButton
+      Left = 143
+      Height = 32
+      Top = 164
+      Width = 96
+      Caption = 'Receber'
+      Color = 16744448
+      Flat = True
+      Font.Color = clWhite
+      Font.Style = [fsBold]
+      Transparent = False
+      OnClick = btnReceberClick
+      ShowHint = True
+      ParentFont = False
+      ParentShowHint = False
+    end
+    object Label3: TLabel
+      Left = 2
+      Height = 30
+      Top = 2
+      Width = 376
+      Align = alTop
+      Alignment = taCenter
+      AutoSize = False
+      Caption = 'Faturamento'
+      Color = 16769217
+      Font.Height = -15
+      Font.Style = [fsBold]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+    end
+    object pnMsg: TPanel
+      Left = 2
+      Height = 20
+      Top = 209
+      Width = 376
+      Align = alBottom
+      BevelOuter = bvNone
+      Caption = 'Mensagem'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 2
+      Visible = False
+    end
+    object lbValorDoPedido: TLabel
+      Left = 143
+      Height = 15
+      Top = 42
+      Width = 30
+      Caption = 'Valor:'
+      ParentColor = False
+    end
+    object lbValor: TLabel
+      Left = 188
+      Height = 25
+      Top = 35
+      Width = 99
+      Caption = 'R$ 1000,00'
+      Font.Height = -19
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+    end
+    object lbValorDoTroco: TLabel
+      Left = 139
+      Height = 15
+      Top = 139
+      Width = 34
+      Caption = 'Troco:'
+      ParentColor = False
+      Visible = False
+    end
+    object lbTroco: TLabel
+      Left = 188
+      Height = 21
+      Top = 134
+      Width = 53
+      Caption = 'R$ 1,00'
+      Font.Height = -16
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+  end
+  object Timer: TTimer
+    Enabled = False
+    Interval = 7000
+    OnTimer = TimerTimer
+    left = 328
+    top = 8
+  end
+  object IBPT: TACBrIBPTax
+    ProxyPort = '8080'
+    left = 328
+    top = 152
+  end
+end

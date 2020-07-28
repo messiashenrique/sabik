@@ -1,0 +1,956 @@
+object frmCaixa: TfrmCaixa
+  Left = 140
+  Height = 575
+  Top = 68
+  Width = 1175
+  Caption = 'Caixa'
+  ClientHeight = 575
+  ClientWidth = 1175
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  LCLVersion = '1.6.0.4'
+  object PageControl1: TPageControl
+    Left = 0
+    Height = 552
+    Top = 0
+    Width = 1175
+    ActivePage = tabDiario
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object tabDiario: TTabSheet
+      Caption = 'Lançamentos do dia'
+      ClientHeight = 524
+      ClientWidth = 1167
+      OnShow = tabDiarioShow
+      object pnDiario: TPanel
+        Left = 0
+        Height = 524
+        Top = 0
+        Width = 1167
+        Align = alClient
+        BevelOuter = bvNone
+        ClientHeight = 524
+        ClientWidth = 1167
+        Color = clBtnFace
+        ParentColor = False
+        TabOrder = 0
+        object pnLancamentos: TPanel
+          Left = 0
+          Height = 524
+          Top = 0
+          Width = 600
+          Align = alLeft
+          BevelOuter = bvNone
+          ClientHeight = 524
+          ClientWidth = 600
+          TabOrder = 0
+          object pnLancamentosTop: TPanel
+            Left = 0
+            Height = 45
+            Top = 0
+            Width = 600
+            Align = alTop
+            BevelOuter = bvNone
+            ClientHeight = 45
+            ClientWidth = 600
+            TabOrder = 0
+            object Label1: TLabel
+              Left = 0
+              Height = 45
+              Top = 0
+              Width = 600
+              Align = alClient
+              Alignment = taCenter
+              AutoSize = False
+              Caption = 'Lançamentos do Dia'
+              Color = 16765864
+              Font.Height = -15
+              Font.Style = [fsBold]
+              Layout = tlCenter
+              ParentColor = False
+              ParentFont = False
+              Transparent = False
+            end
+            object deDiaCaixa: TDateEdit
+              Left = 493
+              Height = 23
+              Top = 8
+              Width = 103
+              CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+              DefaultToday = True
+              DateOrder = doNone
+              ButtonWidth = 23
+              NumGlyphs = 1
+              Flat = True
+              MaxLength = 0
+              OnChange = deDiaCaixaChange
+              TabOrder = 0
+            end
+            object Label2: TLabel
+              Left = 460
+              Height = 15
+              Top = 8
+              Width = 27
+              Caption = 'Data:'
+              ParentColor = False
+            end
+          end
+          object pnResumoDiario: TPanel
+            Left = 0
+            Height = 130
+            Top = 394
+            Width = 600
+            Align = alBottom
+            BevelOuter = bvNone
+            ClientHeight = 130
+            ClientWidth = 600
+            TabOrder = 1
+            object gridResumo: TPinGrid
+              Left = 1
+              Height = 56
+              Top = 13
+              Width = 601
+              Align = alCustom
+              AlternateColor = 16776441
+              BorderStyle = bsNone
+              Color = clBtnFace
+              ColCount = 8
+              Columns = <              
+                item
+                  Alignment = taCenter
+                  ReadOnly = True
+                  SizePriority = 0
+                  Title.Alignment = taCenter
+                  Title.ImageIndex = 0
+                  Title.ImageLayout = blGlyphTop
+                  Title.Caption = 'À vista'
+                  Width = 73
+                end              
+                item
+                  Alignment = taCenter
+                  ReadOnly = True
+                  SizePriority = 0
+                  Title.Alignment = taCenter
+                  Title.ImageIndex = 1
+                  Title.ImageLayout = blGlyphTop
+                  Title.Caption = 'A prazo'
+                  Width = 73
+                end              
+                item
+                  Alignment = taCenter
+                  ReadOnly = True
+                  SizePriority = 0
+                  Title.Alignment = taCenter
+                  Title.ImageIndex = 2
+                  Title.ImageLayout = blGlyphTop
+                  Title.Caption = 'Crédito R.'
+                  Width = 73
+                end              
+                item
+                  Alignment = taCenter
+                  ReadOnly = True
+                  SizePriority = 0
+                  Title.Alignment = taCenter
+                  Title.ImageIndex = 3
+                  Title.ImageLayout = blGlyphTop
+                  Title.Caption = 'Crédito P.'
+                  Width = 73
+                end              
+                item
+                  Alignment = taCenter
+                  ReadOnly = True
+                  SizePriority = 0
+                  Title.Alignment = taCenter
+                  Title.ImageIndex = 4
+                  Title.ImageLayout = blGlyphTop
+                  Title.Caption = 'Débito'
+                  Width = 73
+                end              
+                item
+                  Alignment = taCenter
+                  ReadOnly = True
+                  SizePriority = 0
+                  Title.Alignment = taCenter
+                  Title.ImageIndex = 5
+                  Title.ImageLayout = blGlyphTop
+                  Title.Caption = 'Credipar'
+                  Width = 73
+                end              
+                item
+                  Alignment = taCenter
+                  ReadOnly = True
+                  SizePriority = 0
+                  Title.Alignment = taCenter
+                  Title.ImageIndex = 6
+                  Title.ImageLayout = blGlyphTop
+                  Title.Caption = 'Cheque'
+                  Width = 73
+                end              
+                item
+                  Alignment = taCenter
+                  ReadOnly = True
+                  SizePriority = 0
+                  Title.Alignment = taCenter
+                  Title.ImageIndex = 7
+                  Title.ImageLayout = blGlyphTop
+                  Title.Caption = 'Previsões'
+                  Width = 73
+                end>
+              DefaultRowHeight = 36
+              FixedColor = 15921906
+              FixedCols = 0
+              Flat = True
+              Options = [goVertLine, goSmoothScroll]
+              RowCount = 2
+              TabOrder = 0
+              TitleImageList = iml16
+              MarkColor = clBlack
+              ColWidths = (
+                73
+                73
+                73
+                73
+                73
+                73
+                73
+                73
+              )
+            end
+            object lbRodape: TLabel
+              AnchorSideLeft.Control = pnResumoDiario
+              AnchorSideTop.Control = pnResumoDiario
+              AnchorSideRight.Side = asrBottom
+              Left = 3
+              Height = 1
+              Top = 0
+              Width = 1
+              BorderSpacing.Left = 3
+              ParentColor = False
+            end
+            object lbUpdate: TLabel
+              Left = 521
+              Height = 15
+              Top = 0
+              Width = 75
+              Caption = 'Atualizar caixa'
+              Font.Color = clBlue
+              Font.Style = [fsUnderline]
+              ParentColor = False
+              ParentFont = False
+              OnClick = lbUpdateClick
+            end
+            object lbtotais: TLabel
+              AnchorSideTop.Control = pnResumoDiario
+              AnchorSideRight.Control = pnResumoDiario
+              AnchorSideRight.Side = asrBottom
+              Left = 361
+              Height = 15
+              Top = 72
+              Width = 239
+              Alignment = taCenter
+              Anchors = []
+              AutoSize = False
+              Caption = 'Totais'
+              Color = 16774120
+              ParentColor = False
+              Transparent = False
+            end
+            object lbRotuloReceita: TLabel
+              AnchorSideLeft.Control = lbtotais
+              AnchorSideTop.Control = lbtotais
+              AnchorSideTop.Side = asrBottom
+              Left = 361
+              Height = 15
+              Top = 87
+              Width = 120
+              Alignment = taCenter
+              AutoSize = False
+              Caption = 'Receita Líquida'
+              Color = 15335393
+              ParentColor = False
+              Transparent = False
+            end
+            object lbRotuloDespesa: TLabel
+              AnchorSideTop.Control = lbtotais
+              AnchorSideTop.Side = asrBottom
+              AnchorSideRight.Control = lbtotais
+              AnchorSideRight.Side = asrBottom
+              Left = 481
+              Height = 15
+              Top = 87
+              Width = 119
+              Alignment = taCenter
+              Anchors = [akTop, akRight]
+              AutoSize = False
+              Caption = 'Despesas'
+              Color = 14674687
+              ParentColor = False
+              Transparent = False
+            end
+            object lbReceitas: TLabel
+              AnchorSideTop.Control = lbRotuloReceita
+              AnchorSideTop.Side = asrBottom
+              AnchorSideRight.Control = lbRotuloReceita
+              AnchorSideRight.Side = asrBottom
+              Left = 427
+              Height = 20
+              Top = 107
+              Width = 54
+              Alignment = taRightJustify
+              Anchors = [akTop, akRight]
+              BorderSpacing.Top = 5
+              Caption = 'R$ 0,00'
+              Font.Height = -15
+              Font.Style = [fsBold]
+              ParentColor = False
+              ParentFont = False
+            end
+          end
+          object gridDiario: TPinGrid
+            Left = 0
+            Height = 349
+            Top = 45
+            Width = 600
+            Align = alClient
+            AlternateColor = 16776441
+            AutoFillColumns = True
+            BorderStyle = bsNone
+            Color = clBtnFace
+            ColCount = 4
+            Columns = <            
+              item
+                Alignment = taCenter
+                ReadOnly = True
+                SizePriority = 0
+                Title.Alignment = taCenter
+                Title.Caption = 'Seq.'
+                Width = 35
+              end            
+              item
+                ReadOnly = True
+                Title.Alignment = taCenter
+                Title.Caption = 'Descrição'
+                Width = 385
+              end            
+              item
+                Alignment = taRightJustify
+                ReadOnly = True
+                SizePriority = 0
+                Title.Alignment = taCenter
+                Title.Caption = 'Receita'
+                Width = 90
+              end            
+              item
+                Alignment = taRightJustify
+                ReadOnly = True
+                SizePriority = 0
+                Title.Alignment = taCenter
+                Title.Caption = 'Despesa'
+                Width = 90
+              end>
+            DefaultRowHeight = 20
+            FixedColor = 16771797
+            FixedCols = 0
+            Flat = True
+            RowCount = 1
+            TabOrder = 2
+            OnDrawCell = gridDiarioDrawCell
+            MarkColor = clBlack
+            ColWidths = (
+              35
+              385
+              90
+              90
+            )
+          end
+        end
+        object Splitter1: TSplitter
+          Left = 600
+          Height = 524
+          Top = 0
+          Width = 5
+        end
+        object pnPrevisao: TPanel
+          Left = 605
+          Height = 524
+          Top = 0
+          Width = 562
+          Align = alClient
+          BevelOuter = bvNone
+          ClientHeight = 524
+          ClientWidth = 562
+          TabOrder = 2
+          object PageControl2: TPageControl
+            Left = 0
+            Height = 524
+            Top = 0
+            Width = 562
+            ActivePage = tabContasAReceber
+            Align = alClient
+            TabIndex = 0
+            TabOrder = 0
+            object tabContasAReceber: TTabSheet
+              Caption = 'Contas a receber'
+              ClientHeight = 496
+              ClientWidth = 554
+              object Label3: TLabel
+                Left = 0
+                Height = 90
+                Top = 0
+                Width = 554
+                Align = alTop
+                Alignment = taCenter
+                AutoSize = False
+                Caption = 'Recebimento de prestações'
+                Color = 14221258
+                Font.Height = -15
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+                Transparent = False
+              end
+              object btnSearchCliente: TBitBtn
+                Left = 8
+                Height = 30
+                Top = 24
+                Width = 248
+                Caption = 'Procure pelo nome do cliente (F3)'
+                Glyph.Data = {
+                  36090000424D3609000000000000360000002800000018000000180000000100
+                  2000000000000009000064000000640000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0016000000B3000000A400000004000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000160000
+                  00D3000000FF000000FF00000029000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000020000
+                  002D0000004A0000004100000014000000000000000000000016000000D30000
+                  00FF000000FF000000A200000001000000000000000000000000000000000000
+                  000000000000000000000000000000000000000000090000007A000000E70000
+                  00FF000000FF000000FF000000FD000000B900000047000000D4000000FF0000
+                  00FF000000A40000000300000000000000000000000000000000000000000000
+                  00000000000000000000000000000000001A000000CE000000FF000000FF0000
+                  00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+                  00A4000000030000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000006000000CA000000FF000000FF000000D20000
+                  00660000003C0000004D00000099000000FA000000FF000000FF000000B70000
+                  0003000000000000000000000000000000000000000000000000000000000000
+                  000000000000000000000000006E000000FF000000FF000000A5000000050000
+                  00000000000000000000000000000000003D000000F4000000FF000000E20000
+                  0007000000000000000000000000000000000000000000000000000000000000
+                  00000000000000000000000000D7000000FF000000DA00000006000000000000
+                  0000000000000000000000000000000000000000006A000000FF000000FF0000
+                  0055000000000000000000000000000000000000000000000000000000000000
+                  00000000000000000018000000FF000000FF0000007900000000000000000000
+                  0000000000000000000000000000000000000000000A000000F7000000FF0000
+                  0092000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000002F000000FF000000FF0000005600000000000000000000
+                  00000000000000000000000000000000000000000000000000DE000000FF0000
+                  00A9000000000000000000000000000000000000000000000000000000000000
+                  00000000000000000021000000FF000000FF0000006A00000000000000000000
+                  00000000000000000000000000000000000000000002000000F0000000FF0000
+                  0098000000000000000000000000000000000000000000000000000000000000
+                  00000000000000000003000000E9000000FF000000BD00000000000000000000
+                  00000000000000000000000000000000000000000046000000FF000000FF0000
+                  0064000000000000000000000000000000000000000000000000000000000000
+                  000000000000000000000000008F000000FF000000FF00000068000000000000
+                  000000000000000000000000000000000015000000DB000000FF000000F30000
+                  0014000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000016000000EB000000FF000000FE000000920000
+                  0021000000000000000800000054000000DE000000FF000000FF000000790000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  00000000000000000000000000000000003D000000F1000000FF000000FF0000
+                  00FF000000F8000000FF000000FF000000FF000000FF000000A6000000020000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000002A000000BE000000FF0000
+                  00FF000000FF000000FF000000FF000000EE0000007100000001000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  00000000000000000000000000000000000000000000000000000000002D0000
+                  00710000008C00000080000000530000000B0000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000000000000000
+                  0000000000000000000000000000000000000000000000000000
+                }
+                OnClick = btnSearchClienteClick
+                TabOrder = 0
+              end
+              object gridParcelas: TPinGrid
+                Left = 0
+                Height = 406
+                Top = 90
+                Width = 554
+                Align = alClient
+                AlternateColor = 16776441
+                AutoFillColumns = True
+                BorderStyle = bsNone
+                Color = clBtnFace
+                ColCount = 8
+                Columns = <                
+                  item
+                    Alignment = taCenter
+                    ReadOnly = True
+                    SizePriority = 0
+                    Title.Alignment = taCenter
+                    Title.Caption = 'Seq.'
+                    Width = 35
+                  end                
+                  item
+                    Alignment = taCenter
+                    SizePriority = 0
+                    Title.Alignment = taCenter
+                    Title.Caption = 'Compra'
+                    Width = 75
+                  end                
+                  item
+                    ReadOnly = True
+                    SizePriority = 0
+                    Title.Alignment = taCenter
+                    Title.Caption = 'Vencimento'
+                    Width = 75
+                  end                
+                  item
+                    Alignment = taCenter
+                    ReadOnly = True
+                    SizePriority = 0
+                    Title.Alignment = taCenter
+                    Title.Caption = 'Prestação'
+                    Width = 65
+                  end                
+                  item
+                    Alignment = taRightJustify
+                    ReadOnly = True
+                    SizePriority = 0
+                    Title.Alignment = taCenter
+                    Title.Caption = 'Valor'
+                    Width = 80
+                  end                
+                  item
+                    Alignment = taRightJustify
+                    SizePriority = 0
+                    Title.Alignment = taCenter
+                    Title.Caption = 'Valor Pago'
+                    Width = 80
+                  end                
+                  item
+                    Alignment = taRightJustify
+                    SizePriority = 0
+                    Title.Alignment = taCenter
+                    Title.Caption = 'Juros'
+                    Width = 75
+                  end                
+                  item
+                    Alignment = taRightJustify
+                    Title.Alignment = taCenter
+                    Title.Caption = 'Situação'
+                    Width = 69
+                  end>
+                DefaultRowHeight = 20
+                FixedColor = 15728607
+                FixedCols = 0
+                Flat = True
+                RowCount = 1
+                TabOrder = 1
+                OnDblClick = gridParcelasDblClick
+                OnDrawCell = gridParcelasDrawCell
+                OnMouseUp = gridParcelasMouseUp
+                MarkColor = clBlack
+                ColWidths = (
+                  35
+                  75
+                  75
+                  65
+                  80
+                  80
+                  75
+                  69
+                )
+              end
+              object fCliente: TLabel
+                Left = 8
+                Height = 1
+                Top = 64
+                Width = 1
+                Font.Style = [fsBold]
+                ParentColor = False
+                ParentFont = False
+              end
+              object ckbParcelasPagas: TCheckBox
+                AnchorSideRight.Control = Label4
+                AnchorSideBottom.Control = Label4
+                AnchorSideBottom.Side = asrBottom
+                Left = 403
+                Height = 16
+                Top = 74
+                Width = 15
+                Align = alCustom
+                Anchors = [akRight, akBottom]
+                AutoSize = False
+                Color = 14221258
+                Font.Height = -11
+                OnChange = ckbParcelasPagasChange
+                ParentColor = False
+                ParentFont = False
+                TabOrder = 2
+              end
+              object Label4: TLabel
+                AnchorSideRight.Control = Label3
+                AnchorSideRight.Side = asrBottom
+                AnchorSideBottom.Control = Label3
+                AnchorSideBottom.Side = asrBottom
+                Left = 418
+                Height = 15
+                Top = 75
+                Width = 134
+                Anchors = [akRight, akBottom]
+                BorderSpacing.Right = 2
+                Caption = 'Mostrar prestações pagas'
+                ParentColor = False
+              end
+            end
+            object tabContasAPagar: TTabSheet
+              Caption = 'Contas a pagar'
+              TabVisible = False
+            end
+          end
+        end
+      end
+    end
+  end
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 552
+    Width = 1175
+    Panels = <>
+  end
+  object iml16: TImageList
+    left = 133
+    top = 46
+    Bitmap = {
+      4C69080000001000000010000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000420000005500000055000000550000
+      0055000000550000005500000055000000550000005500000055000000550000
+      0055000000550000005500000042000000FD000000FF000000FF000000C70000
+      00BB000000BB000000BB000000BB000000BB000000BB000000BB000000BB0000
+      00C7000000FF000000FF000000FD000000FF000000FF000000F20000000D0000
+      00000000000000000009000000600000005F0000000900000000000000000000
+      000E000000F2000000FF000000FF000000FF000000C900000045000000000000
+      000000000005000000C0000000BF000000C8000000C000000005000000000000
+      000000000045000000CA000000FF000000FF0000001100000000000000000000
+      000000000058000000AB0000000400000077000000FF00000058000000000000
+      00000000000000000011000000FF000000FF0000001100000000000000000000
+      000000000097000000EA0000006300000077000000FF00000097000000000000
+      00000000000000000011000000FF000000FF0000001100000000000000000000
+      000000000097000000FF0000007700000077000000FF00000097000000000000
+      00000000000000000011000000FF000000FF0000001100000000000000000000
+      0000000000580000009900000028000000280000009900000058000000000000
+      00000000000000000011000000FF000000FF000000CA00000045000000000000
+      000000000005000000AB000000DD000000DD000000AB00000005000000000000
+      000000000046000000CA000000FF000000FF000000FF000000F20000000D0000
+      000000000000000000090000005F0000005F0000000900000000000000000000
+      000E000000F3000000FF000000FF000000FD000000FF000000FF000000C70000
+      00BB000000BB000000BB000000BB000000BB000000BB000000BB000000BB0000
+      00C7000000FF000000FF000000FD000000420000005500000055000000550000
+      0055000000550000005500000055000000550000005500000055000000550000
+      0055000000550000005500000042000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000002A00000077000000770000
+      0077000000770000007700000077000000770000007700000077000000770000
+      0077000000770000002A000000000000000000000038000000B9000000E50000
+      0099000000990000009900000099000000990000009900000099000000990000
+      00E5000000B9000000380000000000000000000000000000003C000000DA0000
+      0055000000550000005500000055000000550000005500000055000000550000
+      00DA0000003C000000000000000000000000000000000000001D000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF0000001C0000000000000000000000000000000000000000000000CC0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00CA000000000000000000000000000000000000000000000000000000600000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      0060000000000000000000000000000000000000000000000000000000010000
+      00B9000000FF000000FF000000FF000000FF000000FF000000FF000000B90000
+      0001000000000000000000000000000000000000000000000000000000000000
+      000C000000B7000000FF000000FF000000FF000000FF000000BD0000000F0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000F000000BC000000D90000008800000088000000D9000000BC0000000E0000
+      0000000000000000000000000000000000000000000000000000000000010000
+      00BA000000AD00000009000000000000000000000009000000AD000000B90000
+      0001000000000000000000000000000000000000000000000000000000610000
+      00D50000000A000000000000000000000000000000000000000A000000D50000
+      0060000000000000000000000000000000000000000000000000000000CC0000
+      005E0000000000000000000000000000000000000000000000000000005F0000
+      00CB00000000000000000000000000000000000000000000001D000000F90000
+      0007000000000000000000000000000000000000000000000000000000070000
+      00F90000001C000000000000000000000000000000000000003D000000DA0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00DB0000003C00000000000000000000000000000038000000B9000000E70000
+      0099000000990000009900000099000000990000009900000099000000990000
+      00E7000000B90000003800000000000000000000002A00000077000000770000
+      0077000000770000007700000077000000770000007700000077000000770000
+      0077000000770000002A00000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000660000006600000066000000660000
+      0066000000660000006600000066000000660000006600000066000000660000
+      0066000000660000006600000066000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FE000000BC0000
+      00850000008C000000C7000000FF000000FF000000C60000008C000000850000
+      00BC000000FE000000FF000000FF000000FF000000E60000003B000000000000
+      000000000000000000000000008C0000008C0000000000000000000000000000
+      00000000003C000000E7000000FF000000FD0000003800000000000000000000
+      000000000000000000310000004A0000004B0000003000000000000000000000
+      00000000000000000039000000FD000000B40000000C0000000A000000020000
+      0000000000000000005000000000000000000000005000000015000000000000
+      00000000000000000006000000B70000007C000000BF000000C1000000530000
+      006800000060000000890000007D000000690000008D000000630000006A0000
+      006E00000072000000A80000008500000084000000C5000000A5000000AD0000
+      009E000000A300000094000000CA0000009A0000007200000051000000CF0000
+      00B2000000800000009D0000007D000000B800000017000000100000000C0000
+      001900000009000000500000001200000011000000420000000F000000130000
+      00140000000700000011000000B6000000FD0000003900000000000000000000
+      0000000000000000003000000048000000490000002F00000000000000000000
+      00000000000000000039000000FD000000FF000000E70000003C000000000000
+      000000000000000000000000008D0000008C0000000000000000000000000000
+      00000000003C000000E7000000FF000000FF000000FF000000FE000000BC0000
+      00850000008C000000C8000000FF000000FF000000C80000008C000000850000
+      00BC000000FE000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000660000006600000066000000660000
+      0066000000660000006600000066000000660000006600000066000000660000
+      0066000000660000006600000066000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000660000006600000066000000660000
+      0066000000660000006600000066000000660000006600000066000000660000
+      0066000000660000006600000066000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF0000008300000058000000D5000000FF0000
+      007600000091000000860000008D000000F400000079000000480000007D0000
+      00FF000000D300000059000000AC000000FE0000005C00000085000000E00000
+      0002000000B000000027000000760000007200000018000000950000009C0000
+      00FF000000530000000300000056000000FF000000500000006C000000830000
+      001C000000F5000000040000009F00000079000000050000007F000000FB0000
+      00E3000000040000006A00000021000000FF0000009200000021000000250000
+      0081000000D300000000000000C9000000FE0000008F00000006000000750000
+      007D0000001F0000009F00000000000000FF000000D500000000000000040000
+      00E4000000AA00000001000000D8000000730000009400000010000000770000
+      0018000000180000002200000003000000FF000000FF0000005F000000800000
+      00FF000000B000000063000000E000000052000000480000007E000000C80000
+      0055000000E5000000FF00000073000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000660000006600000066000000660000
+      0066000000660000006600000066000000660000006600000066000000660000
+      0066000000660000006600000066000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000200000006300000066000000660000
+      0066000000660000006600000066000000660000006600000066000000660000
+      0066000000660000006300000020000000DF000000B5000000AA000000AA0000
+      00AA000000AA000000AA000000AA000000AA000000AA000000AA000000AA0000
+      00AA000000AA000000B5000000DE000000FF0000001100000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000011000000FF000000FF0000004100000033000000330000
+      0033000000330000003300000033000000330000003300000033000000330000
+      00330000003300000041000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF0000001100000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000011000000FF000000FF0000001100000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000011000000FF000000FF0000001100000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000011000000FF000000FF00000011000000B1000000CC0000
+      003600000088000000CC000000CC0000006D0000000000000000000000000000
+      00000000000000000011000000FF000000FF000000110000003B000000440000
+      00120000002D0000004400000044000000240000000000000000000000000000
+      00000000000000000011000000FF000000DF000000B5000000AA000000AA0000
+      00AA000000AA000000AA000000AA000000AA000000AA000000AA000000AA0000
+      00AA000000AA000000B5000000DE000000200000006300000066000000660000
+      0066000000660000006600000066000000660000006600000066000000660000
+      006600000066000000630000001F000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000660000006600000066000000660000
+      0066000000660000006600000066000000660000006600000066000000660000
+      0066000000660000006600000066000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000F800000096000000600000
+      004A000000440000003B00000033000000330000003A000000440000004A0000
+      005F00000094000000F8000000FF000000FF0000007B000000000000000B0000
+      0050000000540000000E00000000000000000000000E00000054000000510000
+      000A0000000000000079000000FF000000FF000000370000000C000000CE0000
+      00FF000000FF000000E10000001400000013000000D7000000FF000000FF0000
+      00D70000000D00000034000000FF000000FF0000002700000074000000FF0000
+      009300000080000000FF0000007E00000085000000FF000000870000008E0000
+      00FF0000006E00000023000000FF000000FF0000001A000000AD000000FF0000
+      0018000000060000006600000043000000BE000000FE000000080000000E0000
+      00660000003C00000017000000FF000000FF0000001C000000B7000000FF0000
+      000B00000000000000110000000C000000C8000000F900000000000000010000
+      00110000000B00000018000000FF000000FF0000002800000091000000FF0000
+      004700000033000000FF0000009B000000A3000000FF00000036000000440000
+      00FF0000008800000024000000FF000000FF0000003B00000028000000F80000
+      00FD000000F9000000FE0000003A00000036000000FB000000FC000000FA0000
+      00FA0000002B00000037000000FF000000FF0000008A00000000000000360000
+      00A1000000AD0000004B00000000000000000000003F000000A5000000AB0000
+      00400000000000000087000000FF000000FF000000FE000000B30000007E0000
+      00660000005C000000550000004900000047000000550000005A000000660000
+      0079000000AF000000FD000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000FF000000FF000000FF000000FF0000
+      00FF000000FF000000FF000000FF000000660000006600000066000000660000
+      0066000000660000006600000066000000660000006600000066000000660000
+      0066000000660000006600000066000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000070000005D0000005D0000000700000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000B9000000FF000000FF000000B800000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000016000000FF000000A4000000A4000000FF00000015000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000005000000E4000000F3000000F3000000E400000005000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000032000000FF000000FF0000003200000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000001C00000031000000FF000000FF000000310000001C000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      002A000000FF000000FF000000FF000000FF000000FF000000FF0000002A0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0023000000F9000000FF000000FF000000FF000000FF000000F9000000230000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000011000000FF000000FF0000001100000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000011000000FF000000FF0000001100000000000000000000
+      000000000000000000000000000000000062000000DD000000DD000000B70000
+      00000000000000000011000000FF000000FF0000001100000000000000000000
+      00B7000000DD000000DD0000006200000077000000FF000000FF000000570000
+      00000000000000000011000000FF000000FF0000001100000000000000000000
+      0057000000FF000000FF0000007700000077000000EF000000FF000000F20000
+      006C0000000800000011000000FF000000FF00000011000000080000006C0000
+      00F2000000FF000000EF000000770000003F000000220000006C000000FA0000
+      00FF000000EF000000BA000000FF000000FF000000BA000000EF000000FF0000
+      00FA0000006B000000220000003F000000000000000000000000000000260000
+      00A3000000F0000000FF000000FF000000FF000000FF000000F0000000A30000
+      0026000000000000000000000000000000000000000000000000000000000000
+      0000000000050000002F0000004A0000004A0000002F00000005000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000055000000660000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000C1000000E50000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000B00000072000000EA000000F80000009A00000042000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000E000000D3000000FF000000FF000000FF000000FF000000FF0000006B0000
+      0000000000000000000000000000000000000000000000000000000000000000
+      007F000000FF000000D50000003E000000290000006F000000E7000000270000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00A9000000FF0000007A00000000000000000000000000000004000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      007A000000FF000000EC00000059000000040000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000A000000BD000000FF000000FF000000E50000008100000010000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000020000005D000000CC000000FF000000FF000000E5000000290000
+      0000000000000000000000000000000000000000000000000000000000000000
+      000000000000000000000000000000000039000000D1000000FF000000B30000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0003000000270000000000000000000000000000004A000000FF000000D60000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0084000000FA0000008D0000003400000032000000BA000000FF000000A60000
+      0000000000000000000000000000000000000000000000000000000000000000
+      007D000000FD000000FF000000FF000000FF000000FF000000EB000000250000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000002F0000008F000000ED000000F80000008A0000001C000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      00000000000000000000000000C1000000E50000000000000000000000000000
+      0000000000000000000000000000000000000000000000000000000000000000
+      0000000000000000000000000055000000660000000000000000000000000000
+      0000000000000000000000000000
+    }
+  end
+  object menuGrid: TPopupMenu
+    left = 728
+    top = 208
+    object mnReceber: TMenuItem
+      Caption = 'Receber'
+      Bitmap.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000055000000660000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000C1000000E50000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000002F0000008F000000ED000000F80000
+        008A0000001C0000000000000000000000000000000000000000000000000000
+        000000000000000000000000007D000000FD000000FF000000FF000000FF0000
+        00FF000000EB0000002500000000000000000000000000000000000000000000
+        0000000000000000000000000084000000FA0000008D00000034000000320000
+        00BA000000FF000000A600000000000000000000000000000000000000000000
+        0000000000000000000000000003000000270000000000000000000000000000
+        004A000000FF000000D600000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000390000
+        00D1000000FF000000B300000000000000000000000000000000000000000000
+        0000000000000000000000000000000000020000005D000000CC000000FF0000
+        00FF000000E50000002900000000000000000000000000000000000000000000
+        000000000000000000000000000A000000BD000000FF000000FF000000E50000
+        0081000000100000000000000000000000000000000000000000000000000000
+        000000000000000000000000007A000000FF000000EC00000059000000040000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00000000000000000000000000A9000000FF0000007A00000000000000000000
+        0000000000040000000000000000000000000000000000000000000000000000
+        000000000000000000000000007F000000FF000000D50000003E000000290000
+        006F000000E70000002700000000000000000000000000000000000000000000
+        000000000000000000000000000E000000D3000000FF000000FF000000FF0000
+        00FF000000FF0000006B00000000000000000000000000000000000000000000
+        00000000000000000000000000000000000B00000072000000EA000000F80000
+        009A000000420000000000000000000000000000000000000000000000000000
+        00000000000000000000000000000000000000000000000000C1000000E50000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000055000000660000
+        0000000000000000000000000000000000000000000000000000
+      }
+      ImageIndex = 2
+      OnClick = mnReceberClick
+    end
+  end
+end

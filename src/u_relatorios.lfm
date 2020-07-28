@@ -1,0 +1,260 @@
+object frmRelatorios: TfrmRelatorios
+  Left = 277
+  Height = 426
+  Top = 115
+  Width = 1112
+  ActiveControl = pgReports
+  Caption = 'Relatórios'
+  ClientHeight = 426
+  ClientWidth = 1112
+  KeyPreview = True
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  LCLVersion = '1.8.0.4'
+  object StatusBar1: TStatusBar
+    Left = 0
+    Height = 23
+    Top = 403
+    Width = 1112
+    Panels = <>
+  end
+  object pgReports: TPageControl
+    Left = 0
+    Height = 110
+    Top = 0
+    Width = 1112
+    ActivePage = tabEstoque
+    Align = alTop
+    TabIndex = 0
+    TabOrder = 1
+    object tabEstoque: TTabSheet
+      Caption = 'Estoque e Inventário'
+      ClientHeight = 82
+      ClientWidth = 1104
+      object pnEstoque: TPanel
+        Left = 0
+        Height = 82
+        Top = 0
+        Width = 1104
+        Align = alClient
+        ClientHeight = 82
+        ClientWidth = 1104
+        Color = clForm
+        ParentColor = False
+        TabOrder = 0
+        object rgEstoque: TRadioGroup
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Side = asrBottom
+          Left = 0
+          Height = 69
+          Top = 0
+          Width = 464
+          AutoFill = True
+          BorderSpacing.Top = 10
+          Caption = 'Lista de Produtos'
+          ChildSizing.LeftRightSpacing = 6
+          ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+          ChildSizing.EnlargeVertical = crsHomogenousChildResize
+          ChildSizing.ShrinkHorizontal = crsScaleChilds
+          ChildSizing.ShrinkVertical = crsScaleChilds
+          ChildSizing.Layout = cclLeftToRightThenTopToBottom
+          ChildSizing.ControlsPerLine = 2
+          ClientHeight = 49
+          ClientWidth = 460
+          Columns = 2
+          ItemIndex = 0
+          Items.Strings = (
+            'Caderno de Estoque (Entradas)'
+            'Para Reposição'
+            'Com Estoque Zerado'
+            'Do Inventário'
+          )
+          OnSelectionChanged = rgEstoqueSelectionChanged
+          TabOrder = 0
+        end
+        object pnDate: TPanel
+          AnchorSideLeft.Control = rgEstoque
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = rgEstoque
+          Left = 472
+          Height = 64
+          Top = -4
+          Width = 176
+          Anchors = []
+          BevelOuter = bvNone
+          ClientHeight = 64
+          ClientWidth = 176
+          TabOrder = 1
+          object deEstoque: TDateEdit
+            Left = 8
+            Height = 23
+            Top = 24
+            Width = 124
+            CalendarDisplaySettings = [dsShowHeadings, dsShowDayNames]
+            DefaultToday = True
+            DateOrder = doNone
+            ButtonWidth = 23
+            NumGlyphs = 1
+            MaxLength = 0
+            TabOrder = 0
+            Text = 'deEstoque'
+          end
+          object Label1: TLabel
+            Left = 8
+            Height = 15
+            Top = 0
+            Width = 55
+            Caption = 'A partir de'
+            ParentColor = False
+          end
+        end
+      end
+    end
+    object tabFiscal: TTabSheet
+      Caption = 'Relatórios Fiscais'
+      ClientHeight = 82
+      ClientWidth = 1104
+      object pnFinanceiros: TPanel
+        Left = 0
+        Height = 82
+        Top = 0
+        Width = 1104
+        Align = alClient
+        ClientHeight = 82
+        ClientWidth = 1104
+        Color = clForm
+        ParentColor = False
+        TabOrder = 0
+        object Label2: TLabel
+          Left = 16
+          Height = 15
+          Top = 8
+          Width = 108
+          Caption = 'Mapa Resumo NFCe'
+          ParentColor = False
+        end
+        object Label3: TLabel
+          Left = 28
+          Height = 15
+          Top = 28
+          Width = 22
+          Caption = 'Mês'
+          ParentColor = False
+        end
+        object Label4: TLabel
+          Left = 148
+          Height = 15
+          Top = 28
+          Width = 22
+          Caption = 'Ano'
+          ParentColor = False
+        end
+        object seAno: TSpinEdit
+          Left = 148
+          Height = 23
+          Top = 46
+          Width = 50
+          MaxValue = 2050
+          MinValue = 2017
+          TabOrder = 0
+          Value = 2017
+        end
+        object cbMes: TComboBox
+          Left = 28
+          Height = 23
+          Top = 46
+          Width = 100
+          ItemHeight = 15
+          ItemIndex = 0
+          Items.Strings = (
+            'Janeiro'
+            'Fevereiro'
+            'Março'
+            'Abril'
+            'Maio'
+            'Junho'
+            'Julho'
+            'Agosto'
+            'Setembro'
+            'Outubro'
+            'Novembro'
+            'Dezembro'
+          )
+          TabOrder = 1
+          Text = 'Janeiro'
+        end
+      end
+    end
+  end
+  object pnClient: TPanel
+    Left = 0
+    Height = 251
+    Top = 152
+    Width = 1112
+    Align = alClient
+    BevelOuter = bvNone
+    ClientHeight = 251
+    ClientWidth = 1112
+    Color = clForm
+    ParentColor = False
+    TabOrder = 2
+    object preview: TfrPreview
+      Left = 0
+      Height = 251
+      Top = 0
+      Width = 1112
+      Align = alClient
+      BevelOuter = bvNone
+      TabOrder = 0
+      ScrollBars = ssBoth
+    end
+  end
+  object pnControles: TPanel
+    Left = 0
+    Height = 42
+    Top = 110
+    Width = 1112
+    Align = alTop
+    BevelOuter = bvNone
+    ClientHeight = 42
+    ClientWidth = 1112
+    Color = clForm
+    ParentColor = False
+    TabOrder = 3
+    object btnGerar: TBitBtn
+      Left = 32
+      Height = 28
+      Top = 7
+      Width = 140
+      Caption = 'Gerar Relatório'
+      OnClick = btnGerarClick
+      TabOrder = 0
+    end
+    object btnExportar: TBitBtn
+      Left = 208
+      Height = 28
+      Top = 7
+      Width = 140
+      Caption = 'Exportar Relatório'
+      OnClick = btnExportarClick
+      TabOrder = 1
+    end
+    object btnFechar: TBitBtn
+      Left = 384
+      Height = 28
+      Top = 7
+      Width = 140
+      Caption = 'Fechar Relatório'
+      OnClick = btnFecharClick
+      TabOrder = 2
+    end
+  end
+  object saveReport: TSaveDialog
+    Title = 'Salvar Relatório Como'
+    DefaultExt = '.*.pdf'
+    Filter = 'PDF|*.pdf'
+    left = 624
+    top = 86
+  end
+end
